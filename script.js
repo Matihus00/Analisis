@@ -2,7 +2,7 @@ const textArea = document.querySelector(".ingreso-texto");
 
 const mensaje = document.querySelector(".texto-encriptado");
 
-const Copiar = document.querySelector(".copiar");
+
 
 
 
@@ -17,7 +17,7 @@ function botonEncriptar(){
     mensaje.value = textoEncriptado
     textArea.value = "";
     mensaje.style.backgroundImage = "none"
-    Copiar.style.visibility = "visible"
+    
 
 }
 
@@ -55,8 +55,10 @@ function desencriptar(stringDesencriptada){
 }
   
 
-function copiar() {
-    let textoCopiar = document.querySelector(".mensaje");
-    navigator.clipboard.writeText(textoCopiar); 
+function copiar(){
+    mensaje.select();
+    navigator.clipboard.writeText(mensaje.value);
     mensaje.value = "";
+    alert("Texto Copiado");
+    
 }
